@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /land_solution/
+
+# Si le fichier ou dossier existe, on ne touche pas
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Sinon, on envoie vers Y_gererUrlController.php
+RewriteRule ^(.*)$ Y_gererUrlController.php [QSA,L]
